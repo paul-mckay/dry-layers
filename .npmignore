@@ -1,0 +1,4 @@
+bin/
+obj/
+*.njsproj
+.ntvs_analysis.dat

@@ -1,0 +1,21 @@
+{
+    "name": "dry-layers",
+    "version": "0.0.27",
+    "description": "DRY architecture for Node.js, Express and MongoDB",
+    "main": "./lib/dry_layers.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+
+        "type": "git",
+        "url": "https://github.com/pmckay/dry-layers.git"
+    },
+    "keywords": [
+        "DRY",
+        "Express",
+        "MongoDB"
+    ],
+    "author": "Paul McKay",
+    "license": "MIT"
+}
