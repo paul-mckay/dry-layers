@@ -14,10 +14,32 @@ div#sign-in-dialog(class="modal" tabindex="-1" role="dialog")
             div(class="modal-body")                      
                 form(role="form")
                     div(class="form-group")
-                        label(style="width:100%") Email:
-                            input(class="form-control" style="font-weight:normal" type="email", name="email" placeholder="email") 
+                        label(style="width:100%") Meeting:
+                        select#sign-in-dialog-meetings(class="form-control" name="meeting")
                     div(class="form-group")
                         label(style="width:100%") Password:
-                            input(class="form-control" style="font-weight:normal" type="password", name="password" placeholder="password")                     
+                            input(class="form-control" style="font-weight:normal" type="password" name="password" placeholder="password")                     
             div(class="modal-footer")
                 button(type="button" class="btn btn-primary" data-dismiss="modal" value="sign-in") Sign in
+
+script.
+
+    function SignInDialog(id) {
+        var self = Dialog(id);
+        self.load = function(callback) {
+            data_gateway = DataGateway('meeting');
+            data_gateway.get(function (err, data) {
+                var divs = [];
+                $.each(data, function (i, meeting) {
+                    var option = $('<option/>').attr({
+                        value: meeting._id
+                    });
+                    option.append(meeting.name);
+                    divs.push(option);
+                });
+                $(self.id + '-meetings').empty().append(divs);
+                callback();
+            });
+        }        
+        return self;
+    }

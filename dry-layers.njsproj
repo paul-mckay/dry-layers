@@ -30,6 +30,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="lib\application.js" />
+    <Compile Include="lib\meeting_service.js" />
+    <Compile Include="lib\static\meeting_gateway.js" />
     <Compile Include="lib\data_service.js" />
     <Compile Include="lib\dry_layers.js" />
     <Compile Include="lib\registry.js" />
@@ -41,6 +44,8 @@
     <Compile Include="lib\static_service.js" />
     <Compile Include="lib\static\data_gateway.js" />
     <Content Include="lib\views\layout.jade" />
+    <Content Include="lib\views\parts\meeting_sign_in_dialog.jade" />
+    <Content Include="lib\views\meeting_sign_in.jade" />
     <Content Include="lib\views\parts\sign_in_dialog.jade" />
     <Content Include="lib\views\sign_in.jade" />
     <Content Include="lib\views\sign_out.jade" />
